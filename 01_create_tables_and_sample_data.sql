@@ -23,8 +23,6 @@ CREATE TABLE dbo.snack_sales (
     total_amount AS (quantity * unit_price) PERSISTED
 );
 GO
-IF DB_ID('SnackifyDB') IS NULL
-
 
 USE SnackifyDB;
 GO
@@ -38,30 +36,3 @@ VALUES
 (5, '2024-11-05', 104, 'Salem', 'Veg Patty', 'Frozen', 1, 75.00);
 GO
 
-SELECT * FROM dbo.snack_sales;
-
-
-BEGIN
-    CREATE DATABASE SnackifyDB;
-END
-GO
-
-USE SnackifyDB;
-GO
-
-IF OBJECT_ID('dbo.snack_sales') IS NOT NULL
-    DROP TABLE dbo.snack_sales;
-GO
-
-CREATE TABLE dbo.snack_sales (
-    order_id INT PRIMARY KEY,
-    order_date DATE,
-    customer_id INT,
-    city VARCHAR(100),
-    product VARCHAR(150),
-    category VARCHAR(50),
-    quantity INT,
-    unit_price DECIMAL(10,2),
-    total_amount AS (quantity * unit_price) PERSISTED
-);
-GO
