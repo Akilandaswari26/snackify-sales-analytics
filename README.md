@@ -46,7 +46,5 @@ Contact: akilaanandharaman26@gmail.com
 
 ---
 
-## 🔜 Next steps (optional)
-- Replace sample rows with a larger CSV dataset and use `BULK INSERT` to load real-like data.
-- Create Power BI visuals from the monthly trend table and product/category performance.
+
 
